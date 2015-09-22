@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Jonathan Arias - Mad Lib "Flower poem"</title>
+	</head>
+<style>
+p    {font-size:36px;
+font-family:cursive}
+</style>
+	<body>
+
+		<p>
+			<span id="flowerid">[flower]</span> are <span id="colorid">[color]</span>, <br>
+			<span id="flower2id">[flower2]</span> are <span style="color:blue">blue</span>,<br>
+			<span id="nounid">[noun]</span> are <span id="adjectiveid">[adjective]</span> <br>
+			And so are you.
+		</p>
+		
+		<script>
+			// store each prompt response in a variable.
+			var flowerprompt = prompt("Enter the name of a flower (plural)");
+			var flower2prompt  = prompt("Enter another name of a flower (plural)");
+			var colorprompt  = prompt("Enter a color");
+			var nounprompt  = prompt("Enter a noun (plural)");
+			var adjectiveprompt = prompt("Enter an adjective");
+			var flowervar = document.getElementById("flowerid");
+			var flower2var = document.getElementById("flower2id");
+			var colorvar = document.getElementById("colorid");
+			var nounvar = document.getElementById("nounid");
+			var adjectivevar = document.getElementById("adjectiveid");
+
+			//Declare elements as variables
+			flowervar.innerHTML = flowerprompt;
+			flower2var.innerHTML = flower2prompt;
+			colorvar.innerHTML = colorprompt;
+			nounvar.innerHTML = nounprompt;
+			adjectivevar.innerHTML = adjectiveprompt;
+
+			colorvar.style.color = colorprompt;
+
+			//log out each response from the user. to make the output more readable, we'll add a string before each variable
+			console.log("the first flower is: " + flowerprompt);
+			console.log("the second flower is: " + flower2prompt);
+			console.log("the color is: " + colorprompt);
+			console.log("the color is: " + nounprompt);
+			console.log("the adjective is: " + adjectiveprompt);
+			
+		</script>
+		
+	</body>
+</html>
