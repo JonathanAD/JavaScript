@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Magic 8 Ball</title>
+<style>
+#eight-ball{
+    width:500px;
+    margin: 0 auto;
+    text-align: center;
+}
+</style>
+</head>
+
+<body>
+    <div id="eight-ball">
+        <button onclick="shake()">Shake</button>
+        <p id="question"></p>
+        <p id="answer"></p>
+    <div>
+<script>
+
+    // Called when we click the shake button 
+    function shake(){
+        // The question we asked
+        var question = prompt("Ask me a question");
+        var questionText = document.getElementById('question');
+        questionText.innerHTML = question;
+
+        // Number of possible answers  
+        var numberOfAnswers = 6;
+
+        // Answers the 8 Ball can return
+        /*
+        var answerOne = "Yes, sir!";
+        var answerTwo = "No way!";
+        var answerThree = "Maybe. I don't know!"; 
+        var answerFour = "Absolutely... NOT!";
+        */
+
+        var answers = ["Yes, sir!", "No way!", "Maybe. I don't know!", "Absolutely... NOT!", "Error 404 - Answer not found", "undefined"];       
+
+        // Answer returned by our 8 Ball
+        var chosenAnswer = getAnswerNumber(numberOfAnswers);        
+        displayAnswer(chosenAnswer);
+
+        // Returns a number based on the number of sides
+        function getAnswerNumber(answerCount){
+            var number = getRandomInt(0,answerCount);
+            return number;
+        }
+
+        // Returns a random integer between two numbers
+        function getRandomInt(min,max){
+            return Math.floor(Math.random() * (max - min)) + min;
+        }
+
+        // Show our answer in the document 
+        function displayAnswer(answer) {
+
+            // Access the DOM element we want to to change
+            var fortuneText = document.getElementById('answer');
+
+            if ( answer == 0 ) {
+                fortuneText.innerHTML = answers[0];
+            }
+            else if ( answer == 1 ) {
+                fortuneText.innerHTML = answers[1];
+            }
+            else if ( answer == 2 ) {
+                fortuneText.innerHTML = answers[2];
+            }
+            else if ( answer == 3 ) {
+                fortuneText.innerHTML = answers[3];
+            }
+            else if ( answer == 4) {
+                fortuneText.innerHTML = answers[4];
+            }
+            else if ( answer == 5 ) {
+                fortuneText.innerHTML = answers[5];
+            }
+        }
+
+    }
+</script>
+</body>
+
+</html>
