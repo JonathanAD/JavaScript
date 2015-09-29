@@ -32,8 +32,15 @@ body {
     function shake(){
         // The question we asked
         var question = prompt("Ask me a question");
+
         var questionText = document.getElementById('question');
-        questionText.innerHTML = question;
+        if ( question == "" ) {
+                questionText.innerHTML = "Sorry, what was the question again?";
+            }
+        else {
+            questionText.innerHTML = question;
+        }
+        
 
         // Number of possible answers  
         var numberOfAnswers = 6;
@@ -67,12 +74,10 @@ body {
 
             // Access the DOM element we want to to change
             var fortuneText = document.getElementById('answer');
+            console.log(answer)
+           
 
-            /*if ( answer == "" ) {
-                fortuneText.innerHTML = "Sorry, what was the question again?";
-            }
-
-            else */ if ( answer == 0 ) {
+            if ( answer == 0 ) {
                 fortuneText.innerHTML = answers[0];
             }
 
