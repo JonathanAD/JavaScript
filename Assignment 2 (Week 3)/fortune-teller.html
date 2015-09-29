@@ -4,6 +4,11 @@
 <meta charset="UTF-8">
 <title>Magic 8 Ball</title>
 <style>
+#body
+{font-size: 32px;
+font-family: Impact;
+background-color: black;
+font: white;}
 #eight-ball{
     width:500px;
     margin: 0 auto;
@@ -31,7 +36,13 @@
         var numberOfAnswers = 6;
 
         // Answers the 8 Ball can return
-        var answers = ["Yes, sir!", "No way!", "Maybe. I don't know!", "Absolutely... NOT!", "Error 404 - Answer not found", "undefined"];       
+        var answers = [
+        '<img src="images/dont-ask.jpg"/>',
+        '<img src="images/no.jpg"/>',
+          '<img src="images/not-simply.jpg"/>',
+           '<img src="images/not-sure.jpg"/>',
+            '<img src="images/yes.jpg"/>',
+             '<img src="images/aliens.jpg"/>'];       
 
         // Answer returned by our 8 Ball
         var chosenAnswer = getAnswerNumber(numberOfAnswers);        
@@ -54,9 +65,13 @@
             // Access the DOM element we want to to change
             var fortuneText = document.getElementById('answer');
 
-            if ( answer == 0 ) {
+            if ( answer == "" ) {
+                fortuneText.innerHTML = "Sorry, what was the question again?";
+            }
+            else if ( answer == 0 ) {
                 fortuneText.innerHTML = answers[0];
             }
+
             else if ( answer == 1 ) {
                 fortuneText.innerHTML = answers[1];
             }
