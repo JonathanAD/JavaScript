@@ -2,17 +2,20 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Magic 8 Ball</title>
+<title>Ask the memes!</title>
 <style>
-#body
-{font-size: 32px;
-font-family: Impact;
-background-color: black;
-font: white;}
+
+body {
+    background-color: black;
+    color: white;
+}
+
 #eight-ball{
     width:500px;
     margin: 0 auto;
     text-align: center;
+    font-size: 48px;
+    font-family: Impact;
 }
 </style>
 </head>
@@ -39,10 +42,10 @@ font: white;}
         var answers = [
         '<img src="images/dont-ask.jpg"/>',
         '<img src="images/no.jpg"/>',
-          '<img src="images/not-simply.jpg"/>',
-           '<img src="images/not-sure.jpg"/>',
-            '<img src="images/yes.jpg"/>',
-             '<img src="images/aliens.jpg"/>'];       
+        '<img src="images/not-simply.jpg"/>',
+        '<img src="images/not-sure.jpg"/>',
+        '<img src="images/yes.jpg"/>',
+        '<img src="images/aliens.jpg"/>'];       
 
         // Answer returned by our 8 Ball
         var chosenAnswer = getAnswerNumber(numberOfAnswers);        
@@ -65,10 +68,11 @@ font: white;}
             // Access the DOM element we want to to change
             var fortuneText = document.getElementById('answer');
 
-            if ( answer == "" ) {
+            /*if ( answer == "" ) {
                 fortuneText.innerHTML = "Sorry, what was the question again?";
             }
-            else if ( answer == 0 ) {
+
+            else */ if ( answer == 0 ) {
                 fortuneText.innerHTML = answers[0];
             }
 
