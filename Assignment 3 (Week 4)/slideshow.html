@@ -22,44 +22,68 @@
 	</div>
 
 <script>
-    var slideshow = {
-        directory: "images/",
+var slideshow = {
 
-        photos:["powerpoint-slide.jpg","google-office-slide.jpeg","kids-slide.jpg","spiral-slide.jpg","water-slide.jpeg","big-water-slide.jpg"],
-        captions:["PowerPoint slide", "Google office slide", "Kids slide", "Spiral slide", "Water slide", "Big water slide"],
+    directory: "images/",
+/*
 
-		//var photos = [{ "photo": "sun.jpg", "caption" : "the sun"}];
+            { "photor": "aurelius.jpg", "captionr" : "Mark Aurelius"}, 
+            { "photor": "cesar.png", "captionr" : "Gaius Julius Ceasar"},
+            { "photor": "couple.jpg", "captionr" : "Greek Couple"},
+            { "photor": "flavian.jpg", "captionr" : "Flavian Woman"},
+            { "photor": "lucius.jpg", "captionr" : "Lucius Verus"},
+            { "photor": "lupe.jpg", "captionr" : "Emperor Caracalla"},
+            { "photor": "sabina.jpg", "captionr" : "Sabina"}
+            ],
+*/
+    photos:[
+            {"photo": "powerpoint-slide.jpg", "caption" : "PowerPoint slide"},
+            {"photo": "google-office-slide.jpeg", "caption" : "Google office slide"},
+            {"photo": "kids-slide.jpg", "caption" : "Kids slide"},
+            {"photo": "spiral-slide.jpg", "caption" : "Spiral slide"},
+            {"photo": "water-slide.jpeg", "caption" : "Water slide"},
+            {"photo": "water-park-slide.jpg", "caption" : "aterpark slide"}
+            ],
 
-        currentPhoto: 0,
-        getPrevious: function(){
+    currentPhoto: 0,
+
+    getPrevious: function(){
+
             if (this.currentPhoto == 0) 
                 this.currentPhoto = this.photos.length-1;
             else
                 this.currentPhoto--;
 
-            var photo   = this.directory + this.photos[this.currentPhoto];
-            var caption = this.captions[this.currentPhoto];
+            var photo   = this.directory + this.photos[this.currentPhoto].photo;
+            var caption = this.photos[this.currentPhoto].caption;
             return { "photo": photo, "caption": caption };
         },
-        getNext: function(){
+
+    getNext: function(){
+        
             if (this.currentPhoto == this.photos.length-1) 
                 this.currentPhoto = 0;
             else
                 this.currentPhoto++;
 
-            var photo   = this.directory + this.photos[this.currentPhoto];
-            var caption = this.captions[this.currentPhoto];
+            var photo   = this.directory + this.photos[this.currentPhoto].photo;
+            var caption = this.photos[this.currentPhoto].caption;
             return { "photo": photo, "caption": caption };
         }
+
+
+        
     };
 
-    function next(){
+
+
+function next(){
         var image = slideshow.getNext();    
         document.getElementById("currentPhoto").src = image.photo;
         document.getElementById("currentCaption").innerHTML = image.caption;
     }
 
-    function previous(){
+function previous(){
         var image = slideshow.getPrevious();
         document.getElementById("currentPhoto").src = image.photo;
         document.getElementById("currentCaption").innerHTML = image.caption;
