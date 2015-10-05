@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Slideshow</title>
+	<style>
+	#slideshow{
+		width:500px;
+		margin: 0 auto;
+		text-align: center;
+	}
+	</style>
+</head>
+
+<body>
+
+	<div id="slideshow">
+		<img id="currentPhoto" src="images/powerpoint-slide.jpg"/>
+		<p id="currentCaption">Slideshow</p>
+		<button onclick="previous()">Previous</button>
+		<button onclick="next()">Next</button>
+	</div>
+
+<script>
+    var slideshow = {
+        directory: "images/",
+
+        photos:["powerpoint-slide.jpg","google-office-slide.jpeg","kids-slide.jpg","spiral-slide.jpg","water-slide.jpeg","big-water-slide.jpg"],
+        captions:["PowerPoint slide", "Google office slide", "Kids slide", "Spiral slide", "Water slide", "Big water slide"],
+
+		//var photos = [{ "photo": "sun.jpg", "caption" : "the sun"}];
+
+        currentPhoto: 0,
+        getPrevious: function(){
+            if (this.currentPhoto == 0) 
+                this.currentPhoto = this.photos.length-1;
+            else
+                this.currentPhoto--;
+
+            var photo   = this.directory + this.photos[this.currentPhoto];
+            var caption = this.captions[this.currentPhoto];
+            return { "photo": photo, "caption": caption };
+        },
+        getNext: function(){
+            if (this.currentPhoto == this.photos.length-1) 
+                this.currentPhoto = 0;
+            else
+                this.currentPhoto++;
+
+            var photo   = this.directory + this.photos[this.currentPhoto];
+            var caption = this.captions[this.currentPhoto];
+            return { "photo": photo, "caption": caption };
+        }
+    };
+
+    function next(){
+        var image = slideshow.getNext();    
+        document.getElementById("currentPhoto").src = image.photo;
+        document.getElementById("currentCaption").innerHTML = image.caption;
+    }
+
+    function previous(){
+        var image = slideshow.getPrevious();
+        document.getElementById("currentPhoto").src = image.photo;
+        document.getElementById("currentCaption").innerHTML = image.caption;
+    }
+</script>	
+
+
+</body>
+</html>
