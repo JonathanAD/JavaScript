@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<tite> JQuery </title>
+		<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+	</head>
+
+	<style>
+		li {
+			font-size: 36px;
+			color: blue;
+		}
+		.done {
+			text-decoration: line-through;
+			color: red;
+		}
+	</style>
+
+	<script>
+			$('li').click(function){
+				$('li').addClass('done')
+			}
+	</script>
+	<body>
+		<div id="wrapper">
+			<ul>
+				<li>Buy milk</li>
+				<li>Buy bread</li>
+				<li>PANIC!!!</li>
+			<ul>
+			<button>Reset</button>
+		</div>
+	</body>
+</html>
