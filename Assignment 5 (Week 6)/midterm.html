@@ -3,43 +3,24 @@
 <head>
 <meta charset="UTF-8">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-<script src="util.js"></script>
 <title>Weather</title>
 <style>
 
 </style>
 <script>
-// listen for the document ready event
-$(document).ready(function(){
-    // load the json file 
-    $.getJSON("http://api.openweathermap.org/data/2.5/weather?q=NewYork,us&appid=bd82977b86bf27fb59a04b61b657fb6f",function( data ) {
-          //console.log(data.weather);
-          // loop through each element in the JSON weather array 
-          $.each( data.weather, function( key, val ) {
-                //console.log(val.temp);
-                
-                // convert a value from one rage of numbers to another range -- useful for altering heights/colors/etc based on data
-                var h = convertToRange(val.temp,[30,100],[0,400]);
-                // create a new list element that contains data from the JSON
-                var el = $("<li><p>" + val.day + "</p><p>" + val.temp + "</p></li>").css({"height":h});
-                
-                // change the <li> styling based on the JSON data
-                if ( val.precip > .5){
-                    el.addClass("weather rain");
-                }
-                if ( val.precip == 0 ){
-                    el.append('<img src="images/sun.gif"/>');
-                }
-                // add the <li> element to the <ul> tag
-                $('#days').append(el);
-          });
+    $(document).ready(function(){
+        $.getJSON("weather.json",function( data ) {
+              //console.log(data.weather);
+              // loop through each element in the JSON weather array 
+              $.each( data.weather, function( key, val ) {
     });
-});
 </script>
 </head>
+
 <body>
     <div id="wrapper">
-        <ul id="days"></ul>
+        <p> The weather on ( data.weather.day) will be ( data.weather.state) <p>
     </div>
 </body>
+
 </html>
