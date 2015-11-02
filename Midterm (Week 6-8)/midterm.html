@@ -8,31 +8,36 @@
 <title>Is it always sunny in Philadelphia?</title>
 
 <style>
+	body {margin: 0; padding: 0;}
+	div {margin: 0; padding: 0;}
+	img {margin: 0; padding: 0;}
 	h1 {
+		margin: 0; padding: 0;
 		text-align: center;
 		font-family: Textile, Impact, 'sans-serif';
 		font-size: 76px;}
+	.nomargin{margin: 0 0;}
 	.yellow {background-color: #ecec00}
 	.underline {
 		text-decoration: underline;
 	}
-	.cloudy {background-image: 'images/cloudy.jpg'}
+	.cloudy {
+		/*background-color: red;*/
+		background-image: "images/cloudy-sky.jpg";
+	}
 </style>
 
 <script>
 	$(document).ready(function(){
 		$('button').on('click',function(){
-        $('wrapper').each(function(){
             $('body').removeClass('yellow')
               .addClass('cloudy')
-        });
-    });
-
+    	});
 	});
 </script>
 </head>
 <body class="yellow">
-	<div id="wrapper">
+	<div id="wrapper" class="nomargin">
 		<h1>Is it <span class="underline">always</span> sunny in Philadelphia?</h1>
     	<div class="container" align="center">
   			<div class="btn-group-justified">
