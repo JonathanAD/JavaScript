@@ -3,24 +3,49 @@
 <head>
 <meta charset="UTF-8">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-<title>Weather</title>
-<style>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<!-- <link href="css/weather.css" rel="stylesheet"> -->
+<title>Is it always sunny in Philadelphia?</title>
 
+<style>
+	h1 {
+		text-align: center;
+		font-family: Textile, Impact, 'sans-serif';
+		font-size: 76px;}
+	.yellow {background-color: #ecec00}
+	.underline {
+		text-decoration: underline;
+	}
+	.cloudy {background-image: 'images/cloudy.jpg'}
 </style>
+
 <script>
-    $(document).ready(function(){
-        $.getJSON("weather.json",function( data ) {
-              //console.log(data.weather);
-              // loop through each element in the JSON weather array 
-              $.each( data.weather, function( key, val ) {
+	$(document).ready(function(){
+		$('button').on('click',function(){
+        $('wrapper').each(function(){
+            $('body').removeClass('yellow')
+              .addClass('cloudy')
+        });
     });
+
+	});
 </script>
 </head>
-
-<body>
-    <div id="wrapper">
-        <p> The weather on ( data.weather.day) will be ( data.weather.state) <p>
+<body class="yellow">
+	<div id="wrapper">
+		<h1>Is it <span class="underline">always</span> sunny in Philadelphia?</h1>
+    	<div class="container" align="center">
+  			<div class="btn-group-justified">
+    			<button type="button" class="btn btn-primary">Sunday</button>
+    			<button type="button" class="btn btn-primary">Monday</button>
+    			<button type="button" class="btn btn-primary">Tuesday</button>
+    			<button type="button" class="btn btn-primary">Wednesday</button>
+    			<button type="button" class="btn btn-primary">Thursday</button>
+    			<button type="button" class="btn btn-primary">Friday</button>
+    			<button type="button" class="btn btn-primary">Saturday</button>    			
+  			</div>
+		</div>
+    	<img src="images/skyline-silhouette.png">
     </div>
 </body>
-
 </html>
