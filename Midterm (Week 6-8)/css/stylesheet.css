@@ -86,13 +86,18 @@ button
 
 .sunny 
 	{
-		background: url("../images/sunny-sky.jpg");
+		background: url("../images/sunny-sky.jpg"); /*Source: https://i.ytimg.com/vi/GnKJ-_DspMI/maxresdefault.jpg*/
 		background-repeat: no-repeat;
 	}
 
 .partiallyCloudy 
 	{
-		background: url("../images/partially-cloudy-sky.jpg");
+		background: url("../images/partially-cloudy-sky.jpg"); /*Source: http://studeri.org/wp-content/uploads/2015/01/blue-sky-with-sun.jpg*/
+		background-repeat: no-repeat;
+	}
+.partiallyCloudy2 
+	{
+		background: url("../images/partially-cloudy-sky.jpg"); /*Source: http://studeri.org/wp-content/uploads/2015/01/blue-sky-with-sun.jpg*/
 		background-repeat: no-repeat;
 	}
 
@@ -114,6 +119,17 @@ button
 	}
 .stormy 
 	{
-		background: url("../images/rainy-sky.jpg");
+		background: url("../images/stormy-sky.jpg");
+		background-repeat: no-repeat;
+	}
+
+.snowy 
+	{
+		background: url("../images/snowy-sky.jpg"); /*Source: http://static.panoramio.com/photos/original/42209218.jpg*/
+		background-repeat: no-repeat;
+	}
+.snow 
+	{
+		background: url("../images/snow.png");
 		background-repeat: no-repeat;
 	}

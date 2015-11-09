@@ -80,6 +80,33 @@
 		             	.addClass('rain')
 		        });
 
+		        //Friday
+		    	$('#Snowy').on('click',function(){
+		    		console.log("Friday");
+		            $('body')
+		            	.removeClass()
+		             	.addClass('snowy')
+		             $('#Skyline')
+		            	.removeClass()
+		             	.addClass('skyline')
+		             $('#Overlay')
+		            	.removeClass()
+		             	.addClass('snow')
+		        });
+
+		    	//Saturday
+		    	$('#PartiallyCloudy2').on('click',function(){
+		    		console.log("Saturday");
+		            $('body')
+		            	.removeClass()
+		             	.addClass('partiallyCloudy2')
+		             $('#Skyline')
+		            	.removeClass()
+		             	.addClass('skyline')
+		             $('#Overlay')
+		            	.removeClass()
+		    	});
+
 		    	//Reset
 		    	$('#Reset').on('click',function(){
 		            $('body')
@@ -116,7 +143,7 @@
 			    		<button id="Rainy">Wednesday</button>
 			    		<button id="Stormy">Thursday</button>
 			    		<button id="Snowy">Friday</button>
-			    		<button id="Clear sky">Saturday</button>    			
+			    		<button id="PartiallyCloudy2">Saturday</button>    			
 					</div>
 					<div align="center">
 						<button id="Reset">Reset</button>
