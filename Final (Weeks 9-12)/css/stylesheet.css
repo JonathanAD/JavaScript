@@ -1,0 +1,135 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+body
+	{
+
+	}
+h1 
+	{
+		margin: 0;
+		padding: 0;
+		text-align: center;
+		font-family: 'Lucida Calligraphy', 'Textile', 'Impact', 'sans-serif';
+		font-size: 76px;
+		font-weight: bold;
+	}
+button
+	{
+		padding: 10px;
+		font-size: 28px;
+		font-family: 'Helvetica', 'sans-serif';
+	}
+
+#Wrapper
+	{
+		width: 100%;
+		height: 100%;		
+	}
+#Overlay
+	{
+		width: 1920px;
+		height: 1080px;
+	}
+
+#Skyline
+	{
+		width: 100%;
+		height: 100%;
+	}
+
+.underline 
+	{
+		text-decoration: underline;
+	}
+
+.yellowBackground
+	{
+		background-color: #ecec00;
+	}
+
+.silhouette 
+	{
+		height: auto;
+		width: auto;
+		background: url("../images/skyline-silhouette.png");
+		background-repeat: no-repeat;
+		z-index: 10;
+	}
+
+.skyline 
+	{
+		height: 100%;
+		width: auto;
+		background: url("../images/skyline.png");
+		background-repeat: no-repeat;
+		z-index: 10;
+	}
+
+.sunny 
+	{
+		background: url("../images/sunny-sky.jpg"); /*Source: https://i.ytimg.com/vi/GnKJ-_DspMI/maxresdefault.jpg*/
+		background-repeat: no-repeat;
+	}
+
+.partiallyCloudy 
+	{
+		background: url("../images/partially-cloudy-sky.jpg"); /*Source: http://studeri.org/wp-content/uploads/2015/01/blue-sky-with-sun.jpg*/
+		background-repeat: no-repeat;
+	}
+.partiallyCloudy2 
+	{
+		background: url("../images/partially-cloudy-sky.jpg"); /*Source: http://studeri.org/wp-content/uploads/2015/01/blue-sky-with-sun.jpg*/
+		background-repeat: no-repeat;
+	}
+
+.cloudy 
+	{
+		background: url("../images/cloudy-sky.jpg");
+		background-repeat: no-repeat;
+	}
+
+.rainy 
+	{
+		background: url("../images/rainy-sky.jpg");
+		background-repeat: no-repeat;
+	}
+.rain 
+	{
+		background: url("../images/rain.png");
+		background-repeat: no-repeat;
+	}
+.stormy 
+	{
+		background: url("../images/stormy-sky.jpg");
+		background-repeat: no-repeat;
+	}
+
+.snowy 
+	{
+		background: url("../images/snowy-sky.jpg"); /*Source: http://static.panoramio.com/photos/original/42209218.jpg*/
+		background-repeat: no-repeat;
+	}
+.snow 
+	{
+		background: url("../images/snow.png");
+		background-repeat: no-repeat;
+	}

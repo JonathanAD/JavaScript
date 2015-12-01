@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="css\stylesheet.css">
+		<title>
+			Is it always sunny in Philadelphia?
+		</title>
+
+		<script>
+			$(document).ready(function(){
+
+				//Buttons
+
+				//Sunday
+				$('#Sunny').on('click',function(){
+					console.log("Sunday");
+		            $('body')
+		            	.removeClass()
+		             	.addClass('sunny')
+		            $('#Skyline')
+		            	.removeClass()
+		             	.addClass('skyline')
+		             $('#Overlay')
+		            	.removeClass()
+		    	});
+
+				//Monday
+		    	$('#PartiallyCloudy').on('click',function(){
+		    		console.log("Monday");
+		            $('body')
+		            	.removeClass()
+		             	.addClass('partiallyCloudy')
+		             $('#Skyline')
+		            	.removeClass()
+		             	.addClass('skyline')
+		             $('#Overlay')
+		            	.removeClass()
+		    	});
+
+		    	//Tuesday
+		    	$('#Cloudy').on('click',function(){
+		    		console.log("Tuesday");
+		            $('body')
+		            	.removeClass()
+		             	.addClass('cloudy')
+		             $('#Skyline')
+		            	.removeClass()
+		             	.addClass('skyline')
+		             $('#Overlay')
+		            	.removeClass()
+		        });
+
+		        //Wednesday
+		    	$('#Rainy').on('click',function(){
+		    		console.log("Wednesday");
+		            $('body')
+		            	.removeClass()
+		             	.addClass('rainy')
+		             $('#Skyline')
+		            	.removeClass()
+		             	.addClass('skyline')
+		             $('#Overlay')
+		            	.removeClass()
+		             	.addClass('rain')
+		        });
+
+		        //Thursday
+		    	$('#Stormy').on('click',function(){
+		    		console.log("Thursday");
+		            $('body')
+		            	.removeClass()
+		             	.addClass('stormy')
+		             $('#Skyline')
+		            	.removeClass()
+		             	.addClass('skyline')
+		             $('#Overlay')
+		            	.removeClass()
+		             	.addClass('rain')
+		        });
+
+		        //Friday
+		    	$('#Snowy').on('click',function(){
+		    		console.log("Friday");
+		            $('body')
+		            	.removeClass()
+		             	.addClass('snowy')
+		             $('#Skyline')
+		            	.removeClass()
+		             	.addClass('skyline')
+		             $('#Overlay')
+		            	.removeClass()
+		             	.addClass('snow')
+		        });
+
+		    	//Saturday
+		    	$('#PartiallyCloudy2').on('click',function(){
+		    		console.log("Saturday");
+		            $('body')
+		            	.removeClass()
+		             	.addClass('partiallyCloudy2')
+		             $('#Skyline')
+		            	.removeClass()
+		             	.addClass('skyline')
+		             $('#Overlay')
+		            	.removeClass()
+		    	});
+
+		    	//Reset
+		    	$('#Reset').on('click',function(){
+		            $('body')
+		            	.removeClass()
+		             	.addClass('yellowBackground')
+		            $('#Skyline')
+		            	.removeClass()
+		             	.addClass('silhouette')
+		             $('#Overlay')
+		            	.removeClass()             	
+		    	});
+			});
+		</script>
+
+	</head>
+
+
+	<body class="yellowBackground">
+		<div id="Wrapper">
+			<div id="Skyline" class="silhouette">
+				<div id="Overlay">	
+					<h1>
+						Is it 
+						<span class="underline">
+							always
+						</span> 
+						sunny in Philadelphia?
+					</h1>
+
+			    	<div align="center">
+			    		<button id="Sunny">Sunday</button>
+			    		<button id="PartiallyCloudy">Monday</button>
+			    		<button id="Cloudy">Tuesday</button>
+			    		<button id="Rainy">Wednesday</button>
+			    		<button id="Stormy">Thursday</button>
+			    		<button id="Snowy">Friday</button>
+			    		<button id="PartiallyCloudy2">Saturday</button>    			
+					</div>
+					<div align="center">
+						<button id="Reset">Reset</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
