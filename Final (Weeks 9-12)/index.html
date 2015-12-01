@@ -16,9 +16,13 @@
 				//Sunday
 				$('#Sunny').on('click',function(){
 					console.log("Sunday");
-		            $('body')
-		            	.removeClass()
-		             	.addClass('sunny')
+		            $('#Background')
+		            	.fadeOut( "slow", function() {
+		            		// .removeClass()
+		            		// .addClass('sunny')
+		            	});
+
+
 		            $('#Skyline')
 		            	.removeClass()
 		             	.addClass('skyline')
@@ -29,7 +33,7 @@
 				//Monday
 		    	$('#PartiallyCloudy').on('click',function(){
 		    		console.log("Monday");
-		            $('body')
+		            $('#Background')
 		            	.removeClass()
 		             	.addClass('partiallyCloudy')
 		             $('#Skyline')
@@ -42,7 +46,7 @@
 		    	//Tuesday
 		    	$('#Cloudy').on('click',function(){
 		    		console.log("Tuesday");
-		            $('body')
+		            $('#Background')
 		            	.removeClass()
 		             	.addClass('cloudy')
 		             $('#Skyline')
@@ -55,7 +59,7 @@
 		        //Wednesday
 		    	$('#Rainy').on('click',function(){
 		    		console.log("Wednesday");
-		            $('body')
+		            $('#Background')
 		            	.removeClass()
 		             	.addClass('rainy')
 		             $('#Skyline')
@@ -69,7 +73,7 @@
 		        //Thursday
 		    	$('#Stormy').on('click',function(){
 		    		console.log("Thursday");
-		            $('body')
+		            $('#Background')
 		            	.removeClass()
 		             	.addClass('stormy')
 		             $('#Skyline')
@@ -83,7 +87,7 @@
 		        //Friday
 		    	$('#Snowy').on('click',function(){
 		    		console.log("Friday");
-		            $('body')
+		            $('#Background')
 		            	.removeClass()
 		             	.addClass('snowy')
 		             $('#Skyline')
@@ -97,7 +101,7 @@
 		    	//Saturday
 		    	$('#PartiallyCloudy2').on('click',function(){
 		    		console.log("Saturday");
-		            $('body')
+		            $('#Background')
 		            	.removeClass()
 		             	.addClass('partiallyCloudy2')
 		             $('#Skyline')
@@ -109,7 +113,7 @@
 
 		    	//Reset
 		    	$('#Reset').on('click',function(){
-		            $('body')
+		            $('#Background')
 		            	.removeClass()
 		             	.addClass('yellowBackground')
 		            $('#Skyline')
@@ -124,11 +128,14 @@
 	</head>
 
 
-	<body class="yellowBackground">
+	<body>
 		<div id="Wrapper">
-			<div id="Skyline" class="silhouette">
-				<div id="Overlay">	
-					<h1>
+			<div id="Background" class="yellowBackground">
+
+			</div>
+
+			<div id="Menu">
+				<h1>
 						Is it 
 						<span class="underline">
 							always
@@ -148,8 +155,18 @@
 					<div align="center">
 						<button id="Reset">Reset</button>
 					</div>
+			</div>
+
+			<div id="Skyline" class="silhouette">
+				<div id="Overlay">	
+					
 				</div>
 			</div>
+
+
+
+
+
 		</div>
 	</body>
 </html>
