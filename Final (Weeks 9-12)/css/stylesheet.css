@@ -202,3 +202,7 @@ button:hover {
 		background: url("../images/snow.png");
 		background-repeat: no-repeat;
 	}
+.hidden
+	{
+		display: none;
+	}
