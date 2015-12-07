@@ -182,21 +182,21 @@
 		    	//Reset
 		    	$('#Reset').on('click',function(){
 		    		$('#BackgroundColor')
+		    			.removeClass()
+		    			.addClass("yellowBackground")
 		    			.fadeIn()
 
 					$('#BackgroundImage')
 						.fadeOut("slow", function() {
-							
-							
 						});
 						
 	            	
-	            	// $('#Skyline')
-	            	// 	.fadeOut("slow")
-	            	// $('#Silhouette')
-	            	// 	.fadeIn("slow")
-		            // $('#Overlay')
-		            // 	.fadeOut("slow")
+	            	$('#Skyline')
+	            		.fadeOut("slow")
+	            	$('#Silhouette')
+	            		.fadeIn("slow")
+		            $('#Overlay')
+		            	.fadeOut("slow")
 
 
 
@@ -228,13 +228,8 @@
 			<div id="Overlay"></div>
 				
 			<div id="Menu">
-				<h1>
-					Is it 
-					<span class="underline">
-						always
-					</span> 
-					sunny in Philadelphia?
-				</h1>
+				<h1>Is it <span class="underline">always</span> sunny in Philadelphia?</h1>
+
 		    	<div align="center">
 		    		<button id="Sunny">Sunday</button>
 		    		<button id="PartiallyCloudy">Monday</button>
