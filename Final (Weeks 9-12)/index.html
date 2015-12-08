@@ -9,198 +9,196 @@
 		</title>
 
 		<script>
+		var SundayWeather;
+		var MondayWeather;
+		var TuesdayWeather;
+		var WednesdayWeather;
+		var ThursdayWeather;
+		var FridayWeather;
+		var SaturdayWeather;
+
 
 		$(document).ready(function(){
+			
 			$('#Skyline').hide()
 			//Intro
 				$('body').fadeIn("slow")
 
+		//JSON
+		$.getJSON("http://api.openweathermap.org/data/2.5/forecast/daily?q=Philadelphia,USA&cnt=7&APPID=63129a1dccdef5ec10b112bd687224bd",function( data ) {
+// console.log(data);
+
+// 			$('button').each(function(k,v){
+// 				console.log(v);
+// /*IF*/			$(v).addClass("sunny");
+// 			});
+
+			//Variables
+			
+			var SundayWeather = data.list[0].weather[0].main;
+			var MondayWeather = data.list[0].weather[0].main;
+			var TuesdayWeather = data.list[0].weather[0].main;
+			var WednesdayWeather = data.list[0].weather[0].main;
+			var ThursdayWeather = data.list[0].weather[0].main;
+			var FridayWeather = data.list[0].weather[0].main;
+			var SaturdayWeather = data.list[0].weather[0].main;
+
+			// console.log(SundayWeather);
+			
 			//Buttons
+				//Sunday
+				$('#Sunny').on('click',function(){
+					console.log("Sunday");
+					$('#BackgroundColor').fadeOut( "slow", function() {
+						$(this).addClass("blueBackground")
+					});
+					$('#BackgroundImage').fadeOut("slow", function() {
+						$(this).removeClass()
+						$(this).addClass(SundayWeather)
+						$(this).fadeIn()
+					});
+					$('#Silhouette').fadeOut("slow")
+					$('#Skyline').fadeIn("slow")
+					$('#Overlay').fadeOut("slow")
 
-			//Sunday
-			$('#Sunny').on('click',function(){
-				console.log("Sunday");
-				$('#BackgroundColor')
-				.fadeOut( "slow", function() {
-					$('#BackgroundColor').addClass("blueBackground")
+					$('#Weather').html("The current weather is "+data.list[0].weather[0].main)
 				});
-
-				$('#BackgroundImage')
-				.fadeOut("slow", function() {
-					$('#BackgroundImage').removeClass()
-					$('#BackgroundImage').addClass("sunny")
-					$('#BackgroundImage').fadeIn()
+				//Monday
+				$('#PartiallyCloudy').on('click',function(){
+					console.log("Monday");
+					$('#BackgroundColor').fadeOut( "slow", function() {
+						$(this).addClass("blueBackground")
+					});
+					$('#BackgroundImage').fadeOut("slow", function() {
+						$(this).removeClass()
+						$(this).addClass("partiallyCloudy")
+						$(this).fadeIn()
+					});
+					$('#Silhouette').fadeOut("slow")
+					$('#Skyline').fadeIn("slow")
+					$('#Overlay').fadeOut("slow")
 				});
-
-				$('#Silhouette')
-				.fadeOut("slow")
-				$('#Skyline')
-				.fadeIn("slow")
-				$('#Overlay')
-				.fadeOut("slow")
-			});
-
-			//Monday
-			$('#PartiallyCloudy').on('click',function(){
-				console.log("Monday");
-				$('#BackgroundColor')
-				.fadeOut( "slow", function() {
-					$('#BackgroundColor').addClass("blueBackground")
-				});
-
-				$('#BackgroundImage')
-				.fadeOut("slow", function() {
-					$('#BackgroundImage').removeClass()
-					$('#BackgroundImage').addClass("partiallyCloudy")
-					$('#BackgroundImage').fadeIn()
-				});
-
-				$('#Silhouette')
-				.fadeOut("slow")
-				$('#Skyline')
-				.fadeIn("slow")
-				$('#Overlay')
-				.fadeOut("slow")
-			});
-
-	    	//Tuesday
-	    	$('#Cloudy').on('click',function(){
-	    		console.log("Tuesday");
-	    		$('#BackgroundColor')
-	    		.fadeOut( "slow", function() {
-	    			$('#BackgroundColor').addClass("blueBackground")
-	    		});
-
-	    		$('#BackgroundImage')
-	    		.fadeOut("slow", function() {
-	    			$('#BackgroundImage').removeClass()
-	    			$('#BackgroundImage').addClass("cloudy")
-	    			$('#BackgroundImage').fadeIn()
-	    		});
-
-	    		$('#Silhouette')
-	    		.fadeOut("slow")
-	    		$('#Skyline')
-	    		.fadeIn("slow")
-	    		$('#Overlay')
-	    		.fadeOut("slow")
-	    	});
-
-	        //Wednesday
-	        $('#Rainy').on('click',function(){
-	        	console.log("Wednesday");
-	        	$('#BackgroundColor')
-	        	.fadeOut( "slow", function() {
-	        		$('#BackgroundColor').addClass("blueBackground")
-	        	});
-
-	        	$('#BackgroundImage')
-	        	.fadeOut("slow", function() {
-	        		$('#BackgroundImage').removeClass()
-	        		$('#BackgroundImage').addClass("rainy")
-	        		$('#BackgroundImage').fadeIn()
-	        	});
-
-	        	$('#Silhouette')
-	        	.fadeOut("slow")
-	        	$('#Skyline')
-	        	.fadeIn("slow")
-	        	$('#Overlay')
-	        	.addClass('rain')
-	        	.fadeIn("slow")
-
-
-	        });
-
-	        //Thursday
-	        $('#Stormy').on('click',function(){
-	        	console.log("Thursday");
-	        	$('#BackgroundColor')
-	        	.fadeOut( "slow", function() {
-	        		$('#BackgroundColor').addClass("blueBackground")
-	        	});
-
-	        	$('#BackgroundImage')
-	        	.fadeOut("slow", function() {
-	        		$('#BackgroundImage').removeClass()
-	        		$('#BackgroundImage').addClass("stormy")
-	        		$('#BackgroundImage').fadeIn()
-	        	});
-
-	        	$('#Silhouette')
-	        	.fadeOut("slow")
-	        	$('#Skyline')
-	        	.fadeIn("slow")
-	        	$('#Overlay')
-	        	.addClass('rain')
-	        	.fadeIn("slow")
-	        });
-
-	        //Friday
-	        $('#Snowy').on('click',function(){
-	        	console.log("Friday");
-	        	$('#BackgroundColor')
-	        	.fadeOut( "slow", function() {
-	        		$('#BackgroundColor').addClass("blueBackground")
-	        	});
-
-	        	$('#BackgroundImage')
-	        	.fadeOut("slow", function() {
-	        		$('#BackgroundImage').removeClass()
-	        		$('#BackgroundImage').addClass("snowy")
-	        		$('#BackgroundImage').fadeIn()
-	        	});
-
-	        	$('#Silhouette')
-	        	.fadeOut("slow")
-	        	$('#Skyline')
-	        	.fadeIn("slow")
-	        	$('#Overlay')
-	        	.addClass('snow')
-	        	.fadeIn("slow")
-	        });
-
-	    	//Saturday
-	    	$('#PartiallyCloudy2').on('click',function(){
-	    		console.log("Saturday");
-	    		$('#BackgroundColor')
-	    		.fadeOut( "slow", function() {
-	    			$('#BackgroundColor').addClass("blueBackground")
-	    		});
-
-	    		$('#BackgroundImage')
-	    		.fadeOut("slow", function() {
-	    			$('#BackgroundImage').removeClass()
-	    			$('#BackgroundImage').addClass("partiallyCloudy2")
-	    			$('#BackgroundImage').fadeIn()
-	    		});
-
-	    		$('#Silhouette')
-	    		.fadeOut("slow")
-	    		$('#Skyline')
-	    		.fadeIn("slow")
-	    		$('#Overlay')
-	    		.fadeOut("slow")
-	    	});
-
-	    	//Reset
-	    	$('#Reset').on('click',function(){
-	    		$('#BackgroundColor')
-	    		.removeClass()
-	    		.addClass("yellowBackground")
-	    		.fadeIn()
-	    		$('#BackgroundImage')
-	    		.fadeOut("slow", function() {
-	    		});
-
-	    		$('#Skyline')
-	    		.fadeOut("slow")
-	    		$('#Silhouette')
-	    		.fadeIn("slow")
-	    		$('#Overlay')
-	    		.fadeOut("slow")
-	    	});
-	    });
+		    	//Tuesday
+		    	$('#Cloudy').on('click',function(){
+		    		console.log("Tuesday");
+		    		$('#BackgroundColor')
+		    		.fadeOut( "slow", function() {
+		    			$(this).addClass("blueBackground")
+		    		});
+		    		$('#BackgroundImage')
+		    		.fadeOut("slow", function() {
+		    			$(this).removeClass()
+		    			$(this).addClass("cloudy")
+		    			$(this).fadeIn()
+		    		});
+		    		$('#Silhouette')
+		    		.fadeOut("slow")
+		    		$('#Skyline')
+		    		.fadeIn("slow")
+		    		$('#Overlay')
+		    		.fadeOut("slow")
+		    	});
+		        //Wednesday
+		        $('#Rainy').on('click',function(){
+		        	console.log("Wednesday");
+		        	$('#BackgroundColor')
+		        	.fadeOut( "slow", function() {
+		        		$(this).addClass("blueBackground")
+		        	});
+		        	$('#BackgroundImage')
+		        	.fadeOut("slow", function() {
+		        		$(this).removeClass()
+		        		$(this).addClass("rainy")
+		        		$(this).fadeIn()
+		        	});
+		        	$('#Silhouette')
+		        	.fadeOut("slow")
+		        	$('#Skyline')
+		        	.fadeIn("slow")
+		        	$('#Overlay')
+		        	.addClass('rain')
+		        	.fadeIn("slow")
+		        });
+		        //Thursday
+		        $('#Stormy').on('click',function(){
+		        	console.log("Thursday");
+		        	$('#BackgroundColor')
+		        	.fadeOut( "slow", function() {
+		        		$(this).addClass("blueBackground")
+		        	});
+		        	$('#BackgroundImage')
+		        	.fadeOut("slow", function() {
+		        		$(this).removeClass()
+		        		$(this).addClass("stormy")
+		        		$(this).fadeIn()
+		        	});
+		        	$('#Silhouette')
+		        	.fadeOut("slow")
+		        	$('#Skyline')
+		        	.fadeIn("slow")
+		        	$('#Overlay')
+		        	.addClass('rain')
+		        	.fadeIn("slow")
+		        });
+		        //Friday
+		        $('#Snowy').on('click',function(){
+		        	console.log("Friday");
+		        	$('#BackgroundColor')
+		        	.fadeOut( "slow", function() {
+		        		$(this).addClass("blueBackground")
+		        	});
+		        	$('#BackgroundImage')
+		        	.fadeOut("slow", function() {
+		        		$(this).removeClass()
+		        		$(this).addClass("snowy")
+		        		$(this).fadeIn()
+		        	});
+		        	$('#Silhouette')
+		        	.fadeOut("slow")
+		        	$('#Skyline')
+		        	.fadeIn("slow")
+		        	$('#Overlay')
+		        	.addClass('snow')
+		        	.fadeIn("slow")
+		        });
+		    	//Saturday
+		    	$('#PartiallyCloudy2').on('click',function(){
+		    		console.log("Saturday");
+		    		$('#BackgroundColor')
+		    		.fadeOut( "slow", function() {
+		    			$(this).addClass("blueBackground")
+		    		});
+		    		$('#BackgroundImage')
+		    		.fadeOut("slow", function() {
+		    			$(this).removeClass()
+		    			$(this).addClass("partiallyCloudy2")
+		    			$(this).fadeIn()
+		    		});
+		    		$('#Silhouette')
+		    		.fadeOut("slow")
+		    		$('#Skyline')
+		    		.fadeIn("slow")
+		    		$('#Overlay')
+		    		.fadeOut("slow")
+		    	});
+		    	//Reset
+		    	$('#Reset').on('click',function(){
+		    		$('#BackgroundColor')
+		    		.removeClass()
+		    		.addClass("yellowBackground")
+		    		.fadeIn()
+		    		$('#BackgroundImage')
+		    		.fadeOut("slow", function() {
+		    		});
+		    		$('#Skyline')
+		    		.fadeOut("slow")
+		    		$('#Silhouette')
+		    		.fadeIn("slow")
+		    		$('#Overlay')
+		    		.fadeOut("slow")
+		    	});
+		    });
+		});
 	</script>
 	</head>
 
@@ -213,6 +211,7 @@
 			<div id="Overlay"></div>
 			<div id="Menu">
 				<h1>Is it <span class="underline">always</span> sunny in Philadelphia?</h1>
+				<div id="Weather"></div>
 				<div align="center">
 					<button id="Sunny">Sunday</button>
 					<button id="PartiallyCloudy">Monday</button>
