@@ -153,7 +153,7 @@ button:hover {
 		
 	}
 
-.sunny 
+.Clear 
 	{
 		background: url("../images/sunny-sky.jpg"); /*Source: https://i.ytimg.com/vi/GnKJ-_DspMI/maxresdefault.jpg*/
 		background-repeat: no-repeat;
@@ -176,12 +176,12 @@ button:hover {
 		background-repeat: no-repeat;
 	}
 
-.rainy 
+.Rain 
 	{
 		background: url("../images/rainy-sky.jpg");
 		background-repeat: no-repeat;
 	}
-.rain 
+.rainfall 
 	{
 		background: url("../images/rain.png");
 		background-repeat: no-repeat;
@@ -192,12 +192,12 @@ button:hover {
 		background-repeat: no-repeat;
 	}
 
-.snowy 
+.Snow 
 	{
 		background: url("../images/snowy-sky.jpg"); /*Source: http://static.panoramio.com/photos/original/42209218.jpg*/
 		background-repeat: no-repeat;
 	}
-.snow 
+.snowfall 
 	{
 		background: url("../images/snow.png");
 		background-repeat: no-repeat;
