@@ -34,8 +34,9 @@ h1
 	}
 button
 	{
-		padding: 10px;
-		font-size: 28px;
+		width: 150px;
+		padding: 5px;
+		font-size: 18px;
 		font-family: 'Helvetica', 'sans-serif';
 		-moz-box-shadow:inset 0px 1px 0px 0px #dcecfb;
 		-webkit-box-shadow:inset 0px 1px 0px 0px #dcecfb;
@@ -55,8 +56,6 @@ button
 		display:inline-block;
 		cursor:pointer;
 		color:#ffffff;
-		font-family:Arial;
-		font-size:15px;
 		font-weight:bold;
 		padding:6px 24px;
 		text-decoration:none;
@@ -91,8 +90,15 @@ button:hover {
 		width: 100%;
 		height: 100%;
 	}
+#BackgroundImage2
+	{
+		position:absolute;
+    	bottom: 0px;
+		width: 100%;
+		height: 100%;
+	}
 
-#Overlay
+#Rainfall
 	{
 		z-index: 90;
 		position:absolute;
@@ -100,15 +106,47 @@ button:hover {
 		width: 100%;
 		height: 100%;
 	}
+#Snowfall
+	{
+		z-index: 90;
+		position:absolute;
+    	bottom: 0px;
+		width: 100%;
+		height: 100%;
+	}
+#Caption 
+	{
+		z-index: 10;
+		position: absolute;
+    	top:135px;
+    	left: 220px;
+    	color: #adceff;
+    	text-shadow:5px 5px 5px black;
+	}
+#CaptionSilhouette 
+	{
+		z-index: 15;
+		position: absolute;
+    	top:135px;
+    	left: 220px;
+    	color: black;
+	}
 
 #Menu 
 	{
 		z-index: 100;
 		position: absolute;
-    	top:100px;
-    	left: 280px;
+    	top:700px;
+    	left: 360px;
+    	vertical-align: center;
 	}
+#Weather
+	{
+		z-index: 150;
+		font-size: 32px;
+		font-family: 'Helvetica', 'sans-serif';
 
+	}
 #Skyline
 	{
 		background: url("../images/skyline.png");
@@ -129,7 +167,11 @@ button:hover {
 		background-repeat: no-repeat;
 		z-index: 50;
 	}
-
+#Weather
+	{
+		color: white;
+		font-size: 24;
+	}
 .underline 
 	{
 		text-decoration: underline;
@@ -181,28 +223,76 @@ button:hover {
 		background: url("../images/rainy-sky.jpg");
 		background-repeat: no-repeat;
 	}
-.rainfall 
+
+/*Snow effect*/
+.Snow
 	{
-		background: url("../images/rain.png");
+		margin: 0px;
+	    overflow: hidden;
+	    background: url("../images/snowy-sky.jpg");
 		background-repeat: no-repeat;
 	}
+
 .stormy 
 	{
 		background: url("../images/stormy-sky.jpg");
 		background-repeat: no-repeat;
 	}
+.skew
+	{
+		transform: scale(0.8) scaleZ(1.0) rotateX(9deg);
+		transform-origin: 0% 0%;
+		perspective: 200;-webkit-transform: scale(0.8) scaleZ(1.0) rotateX(9deg);
+		-webkit-transform-origin: 0% 0%;
+		-webkit-perspective: 200;
+		-webkit-perspective-origin: 50% 50%;
+		-moz-transform: scale(0.8) scaleZ(1.0) rotateX(9deg);
+		-moz-transform-origin: 0% 0%;
+		-moz-perspective: 200;
+		-moz-perspective-origin: 50% 50%;
+		-o-transform: scale(0.8) scaleZ(1.0) rotateX(9deg);
+		-o-transform-origin: 0% 0%;
+		-o-perspective: 200;
+		-o-perspective-origin: 50% 50%;
+		-ms-transform: scale(0.8) scaleZ(1.0) rotateX(9deg);
+		-ms-transform-origin: 0% 0%;
+		-ms-perspective: 200;
+		-ms-perspective-origin: 50% 50%;
+		transform: scale(0.8) scaleZ(1.0) rotateX(9deg);
+		transform-origin: 0% 0%;
+		perspective: 200;
+		perspective-origin: 50% 50%;
+	}
 
-.Snow 
-	{
-		background: url("../images/snowy-sky.jpg"); /*Source: http://static.panoramio.com/photos/original/42209218.jpg*/
-		background-repeat: no-repeat;
-	}
-.snowfall 
-	{
-		background: url("../images/snow.png");
-		background-repeat: no-repeat;
-	}
-.hidden
-	{
-		display: none;
-	}
+
+/*Rain effect*/
+/*html{height:100%;}*/
+body {
+background:#0D343A;
+background:-webkit-gradient(linear,0% 0%,0% 100%, from(rgba(13,52,58,1) ), to(#000000)  );
+background: -moz-linear-gradient(top, rgba(13,52,58,1) 0%, rgba(0,0,0,1) 100%);
+
+overflow:hidden;}
+
+
+.drop {
+  background:-webkit-gradient(linear,0% 0%,0% 100%, from(rgba(13,52,58,50) ), to(rgba(255,255,255,0.50))  );
+  background: -moz-linear-gradient(top, rgba(13,52,58,50) 0%, rgba(255,255,255,.8) 100%);
+	width:1px;
+	height:64px;
+	position: absolute;
+	bottom:200px;
+	-webkit-animation: fall .63s linear infinite;
+  -moz-animation: fall .63s linear infinite;
+  
+}
+
+/* animate the drops*/
+@-webkit-keyframes fall {
+	to {margin-top:900px;}
+}
+@-moz-keyframes fall {
+	to {margin-top:900px;}
+}
+
+

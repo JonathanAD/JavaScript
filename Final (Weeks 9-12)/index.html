@@ -1,237 +1,44 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="UTF-8">
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-		<link rel="stylesheet" type="text/css" href="css\stylesheet.css">
-		<title>
-			Is it always sunny in Philadelphia?
-		</title>
-
-		<script>
-
-			//Day variables
-				var Time = new Date();
-				var Weekday = new Array(7);
-					Weekday[0]=  "Sunday";
-					Weekday[1] = "Monday";
-					Weekday[2] = "Tuesday";
-					Weekday[3] = "Wednesday";
-					Weekday[4] = "Thursday";
-					Weekday[5] = "Friday";
-					Weekday[6] = "Saturday";
-				var Today = Weekday[Time.getDay()];
-
-			//Wait for page load
-				$(document).ready(function(){
-			
-			//Hide Skyline	
-				$('#Skyline').hide()
-
-			//JSON
-				$.getJSON("http://api.openweathermap.org/data/2.5/forecast/daily?q=Philadelphia,USA&cnt=7&APPID=63129a1dccdef5ec10b112bd687224bd",function( data ) {
-					console.log(data);
-
-			//Days
-				var Weather0 = data.list[0].weather[0].main;
-				var Weather1 = data.list[1].weather[0].main;
-				var Weather2 = data.list[2].weather[0].main;
-				var Weather3 = data.list[3].weather[0].main;
-				var Weather4 = data.list[4].weather[0].main;
-				var Weather5 = data.list[5].weather[0].main;
-				var Weather6 = data.list[6].weather[0].main;
-			
-			//Buttons
-				$('#Day0').html(Weekday[0])
-				$('#Day1').html(Weekday[1])
-				$('#Day2').html(Weekday[2])
-				$('#Day3').html(Weekday[3])
-				$('#Day4').html(Weekday[4])
-				$('#Day5').html(Weekday[5])
-				$('#Day6').html(Weekday[6])
-			//Icons
-				//ID
-				var Day0IconID = data.list[0].weather[0].icon;
-				var Day1IconID = data.list[1].weather[0].icon;
-				var Day2IconID = data.list[2].weather[0].icon;
-				var Day3IconID = data.list[3].weather[0].icon;
-				var Day4IconID = data.list[4].weather[0].icon;
-				var Day5IconID = data.list[5].weather[0].icon;
-				var Day6IconID = data.list[6].weather[0].icon;
-				//Create img tag
-				var Day0Icon = document.createElement("img");
-				var Day1Icon = document.createElement("img");
-				var Day2Icon = document.createElement("img");
-				var Day3Icon = document.createElement("img");
-				var Day4Icon = document.createElement("img");
-				var Day5Icon = document.createElement("img");
-				var Day6Icon = document.createElement("img");
-				//Append to button
-				document.getElementById("Day0").appendChild(Day0Icon);
-				document.getElementById("Day1").appendChild(Day1Icon);
-				document.getElementById("Day2").appendChild(Day2Icon);
-				document.getElementById("Day3").appendChild(Day3Icon);
-				document.getElementById("Day4").appendChild(Day4Icon);
-				document.getElementById("Day5").appendChild(Day5Icon);
-				document.getElementById("Day6").appendChild(Day6Icon);
-				//img source
-				Day0Icon.src = 'http://openweathermap.org/img/w/'+Day0IconID+'.png';
-				Day1Icon.src = 'http://openweathermap.org/img/w/'+Day1IconID+'.png';
-				Day2Icon.src = 'http://openweathermap.org/img/w/'+Day2IconID+'.png';
-				Day3Icon.src = 'http://openweathermap.org/img/w/'+Day3IconID+'.png';
-				Day4Icon.src = 'http://openweathermap.org/img/w/'+Day4IconID+'.png';
-				Day5Icon.src = 'http://openweathermap.org/img/w/'+Day5IconID+'.png';
-				Day6Icon.src = 'http://openweathermap.org/img/w/'+Day6IconID+'.png';
-
-				//Day0
-				$('#Day0').on('click',function(){
-					console.log("You have selected "+Weekday[0]);
-					$('#BackgroundColor').fadeOut( "slow");
-					$('#BackgroundImage').fadeOut("slow", function() {
-						$(this).removeClass()
-						$(this).addClass(Weather0)
-						$(this).fadeIn()
-					});
-					$('#Silhouette').fadeOut("slow")
-					$('#Skyline').fadeIn("slow")
-					$('#Overlay').fadeOut("slow")
-
-					$('#Weather').html("The current weather is "+data.list[0].weather[0].description)
-				});
-				//Day1
-				$('#Day1').on('click',function(){
-					console.log("You have selected "+Weekday[1]);
-					$('#BackgroundColor').fadeOut( "slow");
-					$('#BackgroundImage').fadeOut("slow", function() {
-						$(this).removeClass()
-						$(this).addClass(Weather1)
-						$(this).fadeIn()
-					});
-					$('#Silhouette').fadeOut("slow")
-					$('#Skyline').fadeIn("slow")
-					$('#Overlay').fadeOut("slow")
-
-					$('#Weather').html("The current weather is "+data.list[1].weather[0].description)
-				});
-		    	//Day2
-		    	$('#Day2').on('click',function(){
-					console.log("You have selected "+Weekday[2]);
-					$('#BackgroundColor').fadeOut( "slow");
-					$('#BackgroundImage').fadeOut("slow", function() {
-						$(this).removeClass()
-						$(this).addClass(Weather0)
-						$(this).fadeIn()
-					});
-					$('#Silhouette').fadeOut("slow")
-					$('#Skyline').fadeIn("slow")
-					$('#Overlay').fadeOut("slow")
-
-					$('#Weather').html("The current weather is "+data.list[2].weather[0].description)
-				});
-		        //Day3
-		        $('#Day3').on('click',function(){
-					console.log("You have selected "+Weekday[0]);
-					$('#BackgroundColor').fadeOut( "slow");
-					$('#BackgroundImage').fadeOut("slow", function() {
-						$(this).removeClass()
-						$(this).addClass(Weather3)
-						$(this).fadeIn()
-					});
-					$('#Silhouette').fadeOut("slow")
-					$('#Skyline').fadeIn("slow")
-					$('#Overlay').fadeOut("slow")
-
-					$('#Weather').html("The current weather is "+data.list[3].weather[0].description)
-				});
-		        //Day4
-		        $('#Day4').on('click',function(){
-					console.log("You have selected "+Weekday[0]);
-					$('#BackgroundColor').fadeOut( "slow");
-					$('#BackgroundImage').fadeOut("slow", function() {
-						$(this).removeClass()
-						$(this).addClass(Weather4)
-						$(this).fadeIn()
-					});
-					$('#Silhouette').fadeOut("slow")
-					$('#Skyline').fadeIn("slow")
-					$('#Overlay').fadeOut("slow")
-
-					$('#Weather').html("The current weather is "+data.list[4].weather[0].description)
-				});
-		        //Day5
-		        $('#Day5').on('click',function(){
-					console.log("You have selected "+Weekday[0]);
-					$('#BackgroundColor').fadeOut( "slow");
-					$('#BackgroundImage').fadeOut("slow", function() {
-						$(this).removeClass()
-						$(this).addClass(Weather5)
-						$(this).fadeIn()
-					});
-					$('#Silhouette').fadeOut("slow")
-					$('#Skyline').fadeIn("slow")
-					$('#Overlay').fadeOut("slow")
-
-					$('#Weather').html("The current weather is "+data.list[5].weather[0].description)
-				});
-		    	//Day6
-		    	$('#Day6').on('click',function(){
-					console.log("You have selected "+Weekday[0]);
-					$('#BackgroundColor').fadeOut( "slow");
-					$('#BackgroundImage').fadeOut("slow", function() {
-						$(this).removeClass()
-						$(this).addClass(Weather6)
-						$(this).fadeIn()
-					});
-					$('#Silhouette').fadeOut("slow")
-					$('#Skyline').fadeIn("slow")
-					$('#Overlay').fadeOut("slow")
-
-					$('#Weather').html("The current weather is "+data.list[6].weather[0].description)
-				});
-		    	//Reset
-		    	$('#Reset').on('click',function(){
-		    		$('#BackgroundColor')
-		    		.removeClass()
-		    		.addClass("yellowBackground")
-		    		.fadeIn()
-		    		$('#BackgroundImage')
-		    		.fadeOut("slow", function() {
-		    		});
-		    		$('#Skyline')
-		    		.fadeOut("slow")
-		    		$('#Silhouette')
-		    		.fadeIn("slow")
-		    		$('#Overlay')
-		    		.fadeOut("slow")
-		    	});
-		    });
-		});
-	</script>
-	</head>
-
-	<body>
-		<div id="Wrapper">
-			<div id="BackgroundColor" class="yellowBackground"></div>
-			<div id="BackgroundImage"></div>
-			<div id="Skyline"></div>
-			<div id="Silhouette"></div>
-			<div id="Overlay"></div>
-			<div id="Menu">
-				<h1>Is it <span class="underline">always</span> sunny in Philadelphia?</h1>
-				<div id="Weather"></div>
-				<div align="center">
-					<button id="Day0"></button>
-					<button id="Day1"></button>
-					<button id="Day2"></button>
-					<button id="Day3"></button>
-					<button id="Day4"></button>
-					<button id="Day5"></button>
-					<button id="Day6"></button>    			
-				</div>
-				<div align="center">
-					<button id="Reset">Reset</button>
-				</div>
+<head>
+	<meta charset="UTF-8">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+	<script src="js/index.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/stylesheet.css">
+	<script type="text/javascript" src="js/ThreeCanvas.js"></script>
+	<script type="text/javascript" src="js/Snow.js"></script>
+	<script type="text/javascript" src="js/3DSnowBox.js"></script>
+	<title>Is it always sunny in Philadelphia?</title>
+</head>
+<body>
+	<div id="Wrapper">
+		<div id="BackgroundImage2" class=Weather0></div>
+		<div id="BackgroundColor" class="yellowBackground"></div>
+		<div id="BackgroundImage"></div>
+		<h1 id="CaptionSilhouette">Is it <span class="underline">always</span> sunny in Philadelphia?</h1>
+		<h1 id="Caption">Is it <span class="underline">always</span> sunny in Philadelphia?</h1>
+		
+		<div id="Skyline"></div>
+		<div id="Silhouette"></div>
+		<div id="Rainfall" class="rain"></div>
+		<div id="Snowfall" class="snow"></div>
+		
+		<div id="Menu">
+			<div align="center">
+				<button id="Day0"><div id = "MonthDay0"><div id = "Temp0"></div></button>
+				<button id="Day1"><div id = "MonthDay1"><div id = "Temp1"></div></button>
+				<button id="Day2"><div id = "MonthDay2"><div id = "Temp2"></div></button>
+				<button id="Day3"><div id = "MonthDay3"><div id = "Temp3"></div></button>
+				<button id="Day4"><div id = "MonthDay4"><div id = "Temp4"></div></button>
+				<button id="Day5"><div id = "MonthDay5"><div id = "Temp5"></div></button>
+				<button id="Day6"><div id = "MonthDay6"><div id = "Temp6"></div></button>    			
 			</div>
+			<br>
+			<div align="center">
+				<button id="Reset">Reset</button>
+			</div>
+			<div id="Weather"></div>
 		</div>
-	</body>
+	</div>
+</body>
 </html>
